@@ -4,12 +4,11 @@ import InnerCarousel from '../InnerCarousel';
 class Carousel extends React.Component {
 
     render() {
-
-        console.log (this.props.products)
+    
         return(
 
             <div>
-                <h2>Totoros</h2>
+                <h2>{this.props.title}</h2>       
                 <InnerCarousel products={this.props.products} />
             </div>
         )

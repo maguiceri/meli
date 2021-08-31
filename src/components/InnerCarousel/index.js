@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from '../Card';
+import "./styles.scss"
 
 class InnerCarousel extends React.Component {
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import Carousel from './components/Carousel';
+import "./App.scss"
 
 class App extends React.Component {
 
@@ -12,8 +13,6 @@ class App extends React.Component {
       }
 
     }
-    //const getCarouselDataJson = getCarouselData.json();
-    //console.log (getCarouselDataJson)
   
   handleChange(e) {
     this.setState({
@@ -26,23 +25,19 @@ class App extends React.Component {
     const getCarouselData = await fetch (`https://api.mercadolibre.com/sites/MLA/search?q=${searchValue}&limit=5`);
     const getCarouselDataJson = await getCarouselData.json();
 
-    this.setState ({                        //ASINCRONICO
+    this.setState ({                       
       products: getCarouselDataJson.results
+      
     })
-    //const getCarouselDataJson = getCarouselData.json()
-    //console.log (getCarouselDataJson) COMPONENTDIDMOUNT
+    
   }
 
    render () {
-    //title
-    //thumbnail imagen chica
-    //price
-
     return(
 
-      <div>
-        <input type="text" onChange={(e) => this.handleChange(e)} placeholder="ingresa tu busqueda" />
-        <button onClick={() => this.handleClick()}>Buscar</button>
+      <div className="add">
+        <input className="input" type="text" onChange={(e) => this.handleChange(e)} placeholder="ingresa tu busqueda" />
+        <button className="button" onClick={() => this.handleClick()}>Buscar</button>
         <Carousel title={this.state.inputValue} products={this.state.products} /> 
       </div>
 

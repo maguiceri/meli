@@ -1,5 +1,6 @@
 import React from 'react';
 import InnerCarousel from '../InnerCarousel';
+import "./styles.scss"
 
 class Carousel extends React.Component {
 
